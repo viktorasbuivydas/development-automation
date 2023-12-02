@@ -1,6 +1,9 @@
 # COMMANDS FOR DEVELOPEMENT AUTOMATION
 
-I am using MacOS and here you can find commands to automate your daily tasks
+I am using MacOS and here you can find commands to automate your daily tasks.
+
+Command description:
+It changes branch, adds all changes, commits everything and pushes to your branch. One command to do it all.
 
 ```
 function gac() {
