@@ -1,0 +1,26 @@
+function gacm() {
+    if [ "$1" = "--help" ]; then
+        echo "Usage: gacm 'commit message' branch_name"
+        echo "Example: gacm 'fix issue #123' dev"
+    elif [ -z "$1" ] || [ -z "$2" ]; then
+        echo "Usage: gacm 'commit message' branch_name"
+    else
+        current_branch=$(git branch --show-current)
+        git checkout main
+        git merge "$2"
+
+        if git status; then
+            git checkout "$current_branch"
+            git add .
+            git commit -m "$1"
+            git push origin "$2"
+            git checkout main
+            git merge "$current_branch"
+            git push origin main
+            git checkout "$current_branch"
+        else
+            echo "No changes to commit."
+            git checkout "$current_branch"
+        fi
+    fi
+}
