@@ -7,8 +7,15 @@ Available commands:
 - [Commit changes and merge your branch into main](scripts/merge_branch)
 
 ## Commit changes to your branch
+
 Command description:
+
 It changes branch, adds all changes, commits everything and pushes to your branch. One command to do it all.
+
+```
+Usage: gac 'commit message' branch_name
+Example: gac "my new commit" dev
+```
 
 ```
 function gac() {
@@ -32,8 +39,15 @@ function gac() {
 ```
 
 ## Commit changes and merge your branch into main
+
 Command description:
+
 It commits your updates, changes branch into main, merges your branch into main, pushes changes and gets back to the orginal branch
+
+```
+Usage: gacm 'commit message' branch_name
+Example: gacm "my new commit which get merged into main" dev
+```
 
 ```
 function gacm() {
@@ -63,14 +77,19 @@ function gacm() {
     fi
 }
 ```
+
+### How to use it
+
 put command at the end of .zshrc file.
+
 To open this file you could use commands such as:
-For VS CODE:
+
+**For VS CODE:**
 ```
 code ~/.zshrc
 ```
 
-Or just open in terminal
+**Or just open in terminal**
 ```
 nano ~/.zshrc
 ```
@@ -80,4 +99,6 @@ after you saved the file, use
 source ~/.zshrc
 ```
 
-If your command still doesn't work, reopen terminal and run it again. If you have any questions, use chatGPT :) fastest and easiest way to solve any problem you are having.
+If your command still doesn't work, reopen terminal and run it again.
+
+If you have any questions, use chatGPT :) fastest and easiest way to solve any problem you are having.
